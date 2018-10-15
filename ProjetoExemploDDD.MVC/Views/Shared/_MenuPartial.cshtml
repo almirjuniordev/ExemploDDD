@@ -1,0 +1,319 @@
+﻿@using OAB.Framework.Domain.Util
+@model OAB.Framework.Domain.Entidades.Menus.Raiz
+
+<!--Menu-->
+<ul class="sidebar-menu tree" data-widget="tree">
+    <li>
+        <a href="@Url.Action("alterar-senha", "admin/usuarios")">
+            <i class="glyphicon glyphicon-lock"></i>
+            <span>Alterar Senha</span>
+        </a>
+    </li>
+
+
+
+    @if (Model != null)
+    {
+        foreach (var menu in Model.menus.OrderBy(x => x.nome))
+        {
+            if (menu.subMenu.Count() > 0)
+            {
+                <li class="treeview">
+                    <a>
+                        <i class="@menu.icone"></i> <span>@Html.DisplayFor(modelItem => menu.nome)</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right" style="margin-right:30px"></i>
+                        </span>
+                    </a>
+
+                    <!--SubMenu-->
+                    <ul class="treeview-menu">
+                        @foreach (var subMenu in menu.subMenu.OrderBy(x => x.nome))
+                        {
+                            <li>
+                                @if (subMenu.subItem.Count() > 0)
+                                {
+
+                                    <a>
+                                        @Html.DisplayFor(modelItem => subMenu.nome)
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right" style="margin-right:30px"></i>
+                                        </span>
+                                    </a>
+
+
+                                    <!-- SubItem -->
+                                    <ul class="treeview-menu">
+                                        @foreach (var subItem in subMenu.subItem.OrderBy(x => x.nome))
+                                        {
+                                            <li>
+
+
+                                                @if (subItem.itens.Count() > 0)
+                                                {
+
+                                                    <a>
+                                                        @Html.DisplayFor(modelItem => subItem.nome)
+                                                        <span class="pull-right-container">
+                                                            <i class="fa fa-angle-left pull-right" style="margin-right:30px"></i>
+                                                        </span>
+                                                    </a>
+
+
+                                                    <!--Item-->
+                                                    <ul class="treeview-menu">
+                                                        @foreach (var ii in subItem.itens.OrderBy(x => x.nome))
+                                                        {
+                                                            <li>
+                                                                <a href="@(ii.url == "#" ? "#" :
+                                                                    (ii.url.Contains("iFrame") ?
+                                                                    //Html.Encode(String.Format("/iFrame?url={0}", Criptografia.Criptografar(ii.url.Replace("iFrame?url=", "")))) :
+
+                                                                    Url.Action("iFrame","Home",new { url=Criptografia.Criptografar(ii.url.Replace("iFrame?url=", "")) }) :
+
+                                                                    Url.Action(ii.url, subItem.url)))">
+                                                                    <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => ii.nome)
+
+                                                                </a>
+
+
+                                                                @*@switch (ii.url)
+                                                                    {
+                                                                        case "iFrame":
+                                                                            if (ii.url.Contains("iFrame"))
+                                                                            {
+                                                                                Html.Encode(String.Format("/iFrame?url={0}", Criptografia.Criptografar(ii.url.Replace("iFrame?url=", ""))));
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                Url.Action("iFrame", "Home", new { url = Criptografia.Criptografar(ii.url.Replace("iFrame?url=", "")) });
+                                                                            }
+
+                                                                            break;
+
+                                                                        case "OpenWindow":
+                                                                            <a href=@ii.url.Replace("OpenWindow", "")
+                                                                               onclick="window.open(' @ii.url.Replace("OpenWindow", "")',
+                                                                                                     'newwindow',
+                                                                                                     'width=300,height=250');
+                                                                                          return false;">
+                                                                                <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => ii.nome)
+                                                                            </a>
+                                                                            break;
+
+                                                                        case "#":
+                                                                            <a href="#">
+                                                                                <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => ii.nome)
+                                                                            </a>
+                                                                            break;
+                                                                        default:
+
+
+                                                                            <a href="@Url.Action(ii.url, subItem.url)" ;>
+                                                                                <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => ii.nome)
+                                                                            </a>
+
+                                                                            break;
+                                                                    }*@
+
+
+
+
+
+
+
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                    <!--./Item-->
+
+                                                }
+                                                else
+                                                {
+                                                    <a href="@(subItem.url == "#" ? "#" :
+                                                            (subItem.url.Contains("iFrame") ?
+                                                            //Html.Encode(String.Format("/iFrame?url={0}", Criptografia.Criptografar(subItem.url.Replace("iFrame?url=", "")))) :
+
+                                                            Url.Action("iFrame","Home",new { url= Criptografia.Criptografar(subItem.url.Replace("iFrame?url=", "")) }) :
+
+                                                            Url.Action(subItem.url, subMenu.url)))">
+                                                        <i class="fa fa-list-alt"></i>
+                                                        @Html.DisplayFor(modelItem => subItem.nome)
+                                                    </a>
+
+
+
+
+
+                                                    @*switch (subItem.url)
+                                                        {
+                                                            case "iFrame":
+                                                                if (subItem.url.Contains("iFrame"))
+                                                                {
+                                                                    Html.Encode(String.Format("/iFrame?url={0}", Criptografia.Criptografar(subItem.url.Replace("iFrame?url=", ""))));
+                                                                }
+                                                                else
+                                                                {
+                                                                    Url.Action("iFrame", "Home", new { url = Criptografia.Criptografar(subItem.url.Replace("iFrame?url=", "")) });
+                                                                }
+
+                                                                break;
+
+                                                            case "OpenWindow":
+                                                                <a href=@subItem.url.Replace("OpenWindow", "")
+                                                                   onclick="window.open(' @subItem.url.Replace("OpenWindow", "")',
+                                                                                                     'newwindow',
+                                                                                                     'width=300,height=250');
+                                                                                          return false;">
+                                                                    <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subItem.nome)
+                                                                </a>
+                                                            break;
+
+                                                        case "#":
+                                                            <a href="#">
+                                                                <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subItem.nome)
+                                                            </a>
+                                                            break;
+                                                        default:
+
+
+                                                            <a href="@Url.Action(subItem.url, subMenu.url)" ;>
+                                                                <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subItem.nome)
+                                                            </a>
+
+                                                            break;
+                                                        }*@
+                                                }
+
+                                            </li>
+                                        }
+                                    </ul>
+                                    <!-- ./SubItem -->
+                                }
+                                else
+                                {
+                                    <a href="@(subMenu.url == "#" ? "#" :
+                                        (subMenu.url.Contains("iFrame") ?
+                                        //Html.Encode(String.Format("/iFrame?url={0}",Criptografia.Criptografar(subMenu.url.Replace("iFrame?url=","")))) :
+
+                                        Url.Action("iFrame","Home",new { url= Criptografia.Criptografar(subMenu.url.Replace("iFrame?url=", "")) }) :
+
+                                        Url.Action(subMenu.url, menu.url)))">
+                                        <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subMenu.nome)
+                                    </a>
+
+
+
+                                    @*if (subMenu.url.Contains("iFrame"))
+                                        {
+                                            /**/
+
+                                                <a href="@Url.Action("iFrame","Home",new { url= Criptografia.Criptografar(subMenu.url.Replace("iFrame?url=", "")) })">
+                                                    <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subMenu.nome)
+                                                </a>
+
+
+                                            break;
+                                        }
+                                        else if (subMenu.url.Contains("OpenWindow"))
+                                        {
+                                                <a href="@String.Format("{0}", subMenu.url.Replace("OpenWindow", ""))"
+                                                   onclick="window.open(' @subMenu.url.Replace("OpenWindow", "")',
+                                                                                                             'newwindow',
+                                                                                                             'width=792,null');
+                                                                                                  return false;">
+                                                    <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subMenu.nome)
+                                                </a>
+                                        }
+                                        else if (subMenu.url.Contains("#"))
+                                        {
+                                            <a href="#">
+                                                <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subMenu.nome)
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@Url.Action(subMenu.url, menu.url)" ;>
+                                                <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => subMenu.nome)
+                                            </a>
+                                        }*@
+
+                                }
+
+                            </li>
+                        }
+                    </ul>
+                    <!--./SubMenu-->
+
+                </li>
+            }
+            else
+            {
+                <li>
+
+                    @if (menu.url != "#")
+                    {
+                        if (menu.url.Contains("iFrame"))
+                        {
+                            <a href="@Url.Action("iFrame", "Home", new { url = Criptografia.Criptografar(menu.url.Replace("iFrame?url=", "")) })">
+                                <i class="@menu.icone"></i>
+                                <span>@Html.DisplayFor(modelItem => menu.nome)</span>
+                            </a>
+
+                        }
+                        else
+                        {
+                            <a href="@Url.Action(menu.url)" ;>
+                                <i class="@menu.icone"></i>
+                                <span>@Html.DisplayFor(modelItem => menu.nome)</span>
+                            </a>
+                        }
+
+
+                        @*switch (menu.url)
+                            {
+                                case "iFrame":
+                                    if (menu.url.Contains("iFrame"))
+                                    {
+                                        Html.Encode(String.Format("/iFrame?url={0}", Criptografia.Criptografar(menu.url.Replace("iFrame?url=", ""))));
+                                    }
+                                    else
+                                    {
+                                        Url.Action("iFrame", "Home", new { url = Criptografia.Criptografar(menu.url.Replace("iFrame?url=", "")) });
+                                    }
+
+                                    break;
+
+                                case "OpenWindow":
+                                        <a href=@menu.url.Replace("OpenWindow", "")
+                                           onclick="window.open(' @menu.url.Replace("OpenWindow", "")',
+                                                                                                             'newwindow',
+                                                                                                             'width=300,height=250');
+                                                                                                  return false;">
+                                            <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => menu.nome)
+                                        </a>
+                                    break;
+                                case "#":
+                                        <a href="#">
+                                            <i class="fa fa-list-alt"></i>@Html.DisplayFor(modelItem => menu.nome)
+                                        </a>
+                                    break;
+
+                                default:
+                                    <a href="@Url.Action(menu.url)" ;>
+                                        <i class="@menu.icone"></i>
+                                        <span>@Html.DisplayFor(modelItem => menu.nome)</span>
+                                    </a>
+                                        break;
+                                }*@
+
+
+                    }
+
+                </li>
+            }
+
+        }
+    }
+</ul>
+<!--./Menu-->

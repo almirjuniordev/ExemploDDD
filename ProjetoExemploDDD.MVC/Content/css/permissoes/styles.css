@@ -1,0 +1,167 @@
+﻿ul.permissoesMenu {
+    display: inline-block;
+    0position: relative;
+    float: left;
+    clear: left;
+    margin: .25em;
+    padding: 0;
+    background: pink;
+}
+
+    ul.permissoesMenu:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: .25em;
+        right: auto;
+        bottom: 0;
+        left: 1.75em;
+        margin: auto;
+        border-right: dotted black .1em;
+        width: 0;
+        height: auto;
+        0background: blue;
+    }
+
+    ul.permissoesMenu:after {
+        content: "-";
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: -.5em;
+        margin: .65em;
+        padding: 0;
+        width: .8em;
+        height: .8em;
+        text-align: center;
+        line-height: .6em;
+        font-size: 1em;
+        background: blue;
+    }
+
+    ul.permissoesMenu > li {
+        display: block;
+        position: relative;
+        float: left;
+        clear: both;
+        right: auto;
+        padding-left: 1em;
+        width: auto;
+        text-align: center;
+        color: white;
+        background: gray;
+    }
+
+        ul.permissoesMenu > li > input {
+            display: block;
+            position: absolute;
+            float: left;
+            z-index: 4;
+            margin: 0 0 0 -1em;
+            padding: 0;
+            width: 1em;
+            height: 2em;
+            font-size: 1em;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+            ul.permissoesMenu > li > input:checked ~ ul:before {
+                display: none;
+            }
+
+            ul.permissoesMenu > li > input:checked ~ ul:after {
+                content: "+"
+            }
+
+            ul.permissoesMenu > li > input:checked ~ ul * {
+                display: none;
+            }
+
+        ul.permissoesMenu > li > span {
+            display: block;
+            position: relative;
+            float: left;
+            z-index: 3;
+            margin: .25em;
+            padding: .25em;
+            background: lightblue;
+        }
+
+            ul.permissoesMenu > li > span:after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -1em;
+                top: 0;
+                bottom: 0;
+                margin: auto .25em auto .25em;
+                border-top: dotted black .1em;
+                width: .75em;
+                height: 0;
+            }
+
+        ul.permissoesMenu > li:last-child:before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 2;
+            top: 1em;
+            left: 0;
+            bottom: -.25em;
+            width: .75em;
+            height: auto;
+            background: lightblue;
+        }
+
+#tree {
+    position: relative;
+    font-family: "Georgia";
+}
+
+    #tree:before {
+        left: .5em;
+    }
+
+    #tree:after {
+        display: none;
+    }
+
+/*decoration*/
+ul.permissoesMenu, ul.permissoesMenu > li:last-child:before {
+    background: white;
+}
+
+    ul.permissoesMenu > li {
+        background: transparent;
+    }
+
+    ul.permissoesMenu:after {
+        background: white;
+        color: black;
+        border: solid gray 1px;
+        border-radius: .1em;
+    }
+
+    ul.permissoesMenu > li > span {
+        border-radius: .25em;
+        color: black;
+        background: white;
+    }
+
+    ul.permissoesMenu > li > input ~ span:before {
+        content: "";
+        display: inline-block;
+        margin: 0 .25em 0 0;
+        width: 1em;
+        height: 1em;
+        ;
+        line-height: 1em;
+        background: url("data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BAAAABwAAABcAAAAbAAAAGwAAABsAAAAbAAAAGwAAABsAAAAbAAAAGwAAABsAAAAbAAAAGwAAABcAAAAPAAAACQNMcIsDZJS3A2SUtwNklLcDZJS3A2SUtwNklLcDZJS3A2SUtwNklLcDZJS3A2SUtwNklLcDTHCTAAAAHwAAABEDbqSpb8Hn/4bQ7/+Fz+7/hc/u/4XP7v+Fz+7/hc/u/4XP7v+Fz+7/hc/u/4XP7v+H0PD/OpfDyQJcikX///8BA3i0m1e13/+N1vH/h9Hu/4fR7v+H0e7/h9Hu/4fR7v+H0e7/h9Hu/4fR7v+H0e7/iNHu/3jJ6e0CgL97////AQJ8uZdGrdz/l9/2/5Tb9P+U2/T/lNv0/5Tb9P+U2/T/lNv0/5Tb9P+U2/T/lNv0/5Tb9P+b4fj/JpvTnQKGyCMCf76TYL7n/4XX8v+h5vr/oOX6/6Dl+v+g5fr/oOX6/6Lo+v+l6vv/per7/6Xq+/+l6vv/puz7/2vJ68kCis9VAoLCj33P8P9px+z/r/P//63x/v+t8f7/rfH+/63x/v+Y5fj/SbLj/0my4/9JsuP/Tbbl/wKKz8UCjtZ9Ao7WfQKFx4uW3vb/Trjn/0645/9OuOf/Trjn/0645/9OuOf/Trjn/4HR8P+S2vP/ktrz/5ng9v8ChceL////Af///wECiMuHn+X5/5jf9v+Y3/b/mN/2/5jf9v+Y3/b/mN/2/5jf9v+Y3/b/mN/2/5jf9v+f5fn/AojLh////wH///8BAorPg6Pp+/+d4/n/neP5/53j+f+d4/n/neP5/53j+f+d4/n/neP5/53j+f+d4/n/o+n7/wKKz4P///8B////AQKN0oGo7f3/ouf7/6Ln+/+i5/v/ouf7/6Ln+/+i5/v/ouf7/6Ln+/+i5/v/ouf7/6jt/f8CjdKB////Af///wECj9Z9rvP//6vw/v+r8P7/q/D+/6vw/v+r8P7/q/D+/6vw/v+r8P7/q/D+/6vw/v+u8///Ao/Wff///wH///8BApHZXQKR2XsCkdl7ApHZewKR2XsCkdl7ApHZe/7+/f/19e7/6+vd//7JQf/0ti7/ApHZewKR2V3///8B////Af///wH///8B////Af///wH///8B////AQKS2ysCktt5ApLbeQKS23kCktt5ApLbeQKS2yv///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//w==");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    ul.permissoesMenu > li > input:checked ~ span:before {
+        background-image: url("data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BAAAABwAAABcAAAAbAAAAGwAAABsAAAAbAAAAGwAAABsAAAAbAAAAGwAAABsAAAAbAAAAGwAAABsAAAAXAAAABwNMcIsDZJS3A2SUtwNklLcDZJS3A2SUtwNklLcDZJS3A2SUtwNklLcDZJS3A2SUtwNklLcDZJS3A2SUtwNMcIsDbqSphs/w/4LL7f+Cy+3/gsvt/4LL7f+Cy+3/gsvt/4LL7f+Cy+3/gsvt/4LL7f+Cy+3/gsvt/4bP8P8DbqSpA3i0m4bP7v99yOj/fcjo/33I6P99yOj/fcjo/33I6P99yOj/fcjo/33I6P99yOj/fcjo/33I6P+Gz+7/A3i0mwJ8uZeK0/D/gszr/4LM6/+CzOv/gszr/4LM6/+CzOv/gszr/4LM6/+CzOv/gszr/4LM6/+CzOv/itPw/wJ8uZcCf76Tj9fy/4fQ7f+H0O3/h9Dt/4fQ7f+H0O3/h9Dt/4fQ7f+H0O3/h9Dt/4fQ7f+H0O3/h9Dt/4/X8v8Cf76TAoLCj5Tb9P+N1fD/jdXw/43V8P+N1fD/jdXw/43V8P+N1fD/jdXw/43V8P+N1fD/jdXw/43V8P+U2/T/AoLCjwKFx4uZ4Pb/ktrz/5La8/+S2vP/ktrz/5La8/+S2vP/ktrz/5La8/+S2vP/ktrz/5La8/+S2vP/meD2/wKFx4sCiMuHn+X5/5jf9v+Y3/b/mN/2/5jf9v+Y3/b/mN/2/5jf9v+Y3/b/mN/2/5jf9v+Y3/b/mN/2/5/l+f8CiMuHAorPg6Pp+/+d4/n/neP5/53j+f+d4/n/neP5/53j+f+j6fr/o+n6/6Pp+v+j6fr/o+n6/6Pp+v+m7Pv/AorPgwKN0oGo7f3/ouf7/6Ln+/+i5/v/ouf7/6Ln+/+r8P3/jNDt/4HF5/+Bxef/gcXn/4HF5/+Bxef/gcXn/wKN0oECj9Z9rvP//6vw/v+r8P7/q/D+/6vw/v+u8///j9Pv/4/T7/+r8P7/q/D+/6vw/v+r8P7/q/D+/67z//8Cj9Z9ApHZXQKR2XsCkdl7ApHZewKR2XsCkdl7ApHZewKR2Xv+/v3/+Pjz//Dw5v/p6dv//slB//S2Lv8Ckdl7ApHZXf///wH///8B////Af///wH///8B////Af///wECktsrApLbeQKS23kCktt5ApLbeQKS23kCktt5ApLbK////wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//w==");
+    }

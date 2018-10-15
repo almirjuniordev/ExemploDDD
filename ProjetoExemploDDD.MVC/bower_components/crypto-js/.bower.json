@@ -1,0 +1,13 @@
+{
+  "name": "crypto-js",
+  "homepage": "https://github.com/brix/crypto-js",
+  "_release": "release-3.1.2",
+  "_resolution": {
+    "type": "tag",
+    "tag": "release-3.1.2",
+    "commit": "db8c2bdd62b34917fa00bf22c30a83e7955cd93c"
+  },
+  "_source": "https://github.com/brix/crypto-js.git",
+  "_target": "release-3.1.2",
+  "_originalSource": "crypto-js"
+}

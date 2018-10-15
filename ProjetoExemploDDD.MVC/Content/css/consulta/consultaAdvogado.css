@@ -1,0 +1,107 @@
+﻿@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+.stats {
+    text-align: center;
+    text-shadow: 1px 1px 0px #fff;
+    margin-top: 25px;
+}
+
+    .stats li {
+        width: 125px;
+
+    }
+
+    .stats span {
+        font-family: Helvetica;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px #fff;
+        font-size: 4em;
+        display: block;
+        line-height: 1em;
+    }
+
+
+#tabCadastro {
+    overflow: auto;
+    height: 515px
+}
+
+.dados ul {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+    .dados ul li {
+        /*display: inline;*/
+    }
+
+table.table-content {
+    min-width: 50%;
+    max-width: 70%;
+    margin: 20px;
+    /*width: 1270px;*/
+}
+
+    table.table-content tr:nth-child(odd) {
+        background-color: #f4f4f4;
+    }
+
+    table.table-content tr th,
+    table.table-content tr td {
+        padding: 5px 10px 5px 5px;
+        font-family: 'Segoe UI';
+        color: #555;
+    }
+
+    table.table-content tr th {
+        padding-left: 10px;
+        /*width: 500px;*/
+    }
+
+    table.table-content tr td {
+        word-wrap: break-word;
+        /*width: 400px;*/
+    }
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+
+
+
+@media (max-width: 991px){
+    .dados {
+        padding-left: 40px;
+        padding-right: 0px;
+        width: 430px;
+        height: 163px;
+    }
+
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .profile img {
+        width: 75px;
+    }
+
+    .profile h2 {
+        font-size: 1.7em;
+    }
+
+    .stats span {
+        font-size: 2em;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}

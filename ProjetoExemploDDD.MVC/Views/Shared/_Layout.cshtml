@@ -1,44 +1,106 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta http-equiv="X-Frame-Options" content="deny">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1" />
+    <title>@System.Configuration.ConfigurationManager.AppSettings["Ambiente"] - @ViewBag.Title</title>
+    <!-- Layout Responsivo -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    @Styles.Render("~/bundles/css/bootstrap")
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-9/css/ionicons.min.css" integrity="sha256-PYCnyzYxeW9HyPyGnZ0hXvJFbK1BMEz5NZXZ+VH/P38=" crossorigin="anonymous" />
+    <!-- CSS -->
+    @Styles.Render("~/bundles/css/default")
+    @Styles.Render("~/bundles/css/select")
+    @Styles.Render("~/bundles/css/iCheck")
+    @Styles.Render("~/bundles/css/iCheck")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    @Styles.Render("~/bundles/css/chatbot")
+
+
+    <!--jQuery-->
+    @Scripts.Render("~/bundles/js/jQuery")
+    @*<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>*@
+    <!--Angular-->
+    @Scripts.Render("~/bundles/js/angular")
+    <!--Knockout -->
+    @Scripts.Render("~/bundles/js/knockout")
+    <!--SOAP-->
+    @*@Scripts.Render("~/bundles/js/jQuerySOAP")*@
+
+
+    @RenderSection("scriptsTop", required: false)
+
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+<body class="hold-transition sidebar-mini sidebar-collapse">
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/js/layout")
+    <!-- wrapper -->
+    <div class="wrapper">
+
+
+        <!--Cabeçalho-->
+        @{ Html.RenderPartial("~/Views/Shared/_Cabecalho.cshtml");}
+        <!--/.Cabeçalho-->
+        <!--Sidebar de Menu-->
+        @{ Html.RenderPartial("~/Views/Shared/_SidebarMenu.cshtml");}
+        <!-- /.Sidebar de Menu-->
+        <!--Conteúdo-->
+        <div class="content-wrapper">
+
+            <div class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+
+        </div>
+        <!--/.Conteúdo-->
+        <!--Rodápé-->
+        @{ Html.RenderPartial("~/Views/Shared/_Rodape.cshtml");}
+        <!--/.Rodapé-->
+        <!-- Sidebar Temas -->
+
+        @{ Html.RenderPartial("~/Views/Shared/_SidebarTemas.cshtml");}
+        <!-- /.Sidebar Temas -->
+        <!-- Adicione o plano de fundo da barra lateral. Esta div deve ser colocada
+             Imediatamente após a barra lateral de controle -->
+        @*<div class="control-sidebar-bg" tabindex="-1"></div>*@
+        <!-- /.Adicione o plano de fundo da barra lateral. Esta div deve ser colocada
+             Imediatamente após a barra lateral de controle -->
+
+
+    </div>
+    <!-- /.wrapper -->
+    <!-- Bootstrap 3.3.6 -->
+    @Scripts.Render("~/bundles/js/bootstrap")
+    <!--JS-->
+    @Scripts.Render("~/bundles/js/fastclick")
+    @Scripts.Render("~/bundles/js/default")
+
+    @Scripts.Render("~/bundles/js/sweetalert")
+    @Scripts.Render("~/bundles/js/jqueryval")
+
+    @Scripts.Render("~/bundles/js/mascaras")
+    @Scripts.Render("~/bundles/js/icheck")
+    @Scripts.Render("~/bundles/js/consulta")
+
+
     @RenderSection("scripts", required: false)
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    @Scripts.Render("~/bundles/js/chatbot")
+    
+
 </body>
 </html>
+

@@ -1,0 +1,156 @@
+﻿@*@using Microsoft.AspNet.Identity
+@using OAB.Intranet.UI.Extensions*@
+
+
+<header class="main-header">
+    <!-- Logo -->
+    <a href="@Url.Action("Index", "Home")" class="logo">
+
+        <!-- Mini logotipo para barra lateral 50x50 pixels -->
+        <span class="logo-mini"><b>ADM</b></span>
+
+        <!-- Logotipo para dispositivos  móveis -->
+        <span class="logo-lg"><b>ADMIN</b>ISTRADOR</span>
+    </a>
+    <!-- /.Logo -->
+
+    <nav class="navbar navbar-static-top">
+
+        <!-- Botão de menu da barra lateral-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+
+        <div class="navbar-custom-menu">
+
+            <ul class="nav navbar-nav">
+
+                <!--Busca de Inscrito-->
+                @*<li class="dropdown search-menu" data-toggle="tooltip" data-placement="left" title="Buscar Inscrito">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-search" ></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="header">Pesquisar Inscrito</li>
+                        <li class="body">
+                            @{ Html.RenderAction("ConsultaHome", "Consultas"); }
+                        </li>
+                    </ul>
+                </li>*@
+
+
+
+
+                <!-- Notificações -->
+                @*<li class="dropdown notifications-menu" data-toggle="tooltip" data-placement="left" title="Notificações">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell-o" ></i>
+                        <span class="label label-warning">10</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">Você tem 10 notificações</li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-users text-aqua"></i> 5 novos membros se juntaram hoje
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-warning text-yellow"></i> Uma descrição muito longa aqui que pode não se encaixar na
+                                        Página e pode causar problemas de design
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-users text-red"></i> 5 novos membros se juntaram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart text-green"></i> 25 vendas feitas
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user text-red"></i> Você mudou seu nome de usuário
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">Ver tudo</a></li>
+                    </ul>
+                </li>*@
+
+                <!-- Menu de Usuario -->
+                <li class="dropdown user user-menu">
+                    @*@{ Html.RenderPartial("~/Views/UsuariosNew/GetLoginUsuario.cshtml"); }*@
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="~/img/usuario.jpg" class="img-circle" alt="User Image">
+                            @*<p>
+                                @User.Identity.Name.ToLower()
+                                <small>@User.GetDepartamento()</small>
+                            </p>*@
+                        </li>
+                        <!-- Menu Body -->
+                        @*<li class="user-body">
+                            <div class="row">
+                                <div class="col-xs-4 text-center">
+                                    <a href="@Url.Action("PerfilUsuario", "Usuarios", new { email = User.GetEmail()})">Perfil</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Lembretes</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="@Url.Action("usuario-de-grupos", "Grupos")">Grupos</a>
+                                </div>
+                            </div>
+                        </li>*@
+                        <!-- Menu Footer-->
+                        <li class="user-footer bg-success">
+
+                            <div class="pull-left">
+                                @Html.AntiForgeryToken()
+                                @*<a href="@Url.Action("ChangePassword", "Manage")" class="btn btn-default btn-flat">*@
+                                <a href="@Url.Action("alterar-senha", "admin/usuarios")" class="btn btn-success btn-flat">
+                                    Altera Senha
+                                </a>
+                            </div>
+
+                            <div class="pull-right">
+                                @using(Html.BeginForm("LogOff", "Autenticacao", FormMethod.Post))
+	                            {
+                                    @Html.AntiForgeryToken()
+                                    <input class="btn btn-success btn-flat" type="submit" name="name" value="LogOff" />
+                                }
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <!-- Botão de controle da barra lateral de controle -->
+                @*<li>
+                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-dashboard"></i></a>
+                </li>*@
+
+                @*<li>
+                    @{Html.RenderPartial("~/Views/Shared/_ChatBot.cshtml");}
+
+                </li>*@
+            </ul>
+
+        </div>
+    </nav>
+
+</header>
+
+

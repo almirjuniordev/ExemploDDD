@@ -1,0 +1,295 @@
+﻿
+#bemvindo {
+    font-weight: 400;
+    font-size: 2.4em;
+    color: #b3b3b3;
+    padding: 15px;
+}
+
+
+
+.letterDrop {
+    top: 0.60em;
+    display: inline-block;
+    opacity: 0.8;
+    transform: rotateX(-90deg);
+    animation: letterDrop 1.0s ease 1 normal forwards;
+}
+
+@keyframes letterDrop {
+    10% {
+        opacity: 0.5;
+    }
+
+    20% {
+        opacity: 0.8;
+        top: 3.75em;
+        transform: rotateX(-360deg);
+    }
+
+    100% {
+        opacity: 1;
+        top: 4.50em;
+        transform: rotateX(360deg);
+    }
+}
+
+
+
+
+
+/*span:nth-child(2n) {
+    color: #b3b3b3;
+}*/
+
+
+
+
+
+/* Desktop grande */
+@media (min-width: 1500px) {
+    #bemvindo {
+        font-weight: 400;
+        font-size: 2.0em;
+        color: #b3b3b3;
+        padding: 15px;
+    }
+
+
+    #imagemSite {
+        width: 855px;
+        height: 380px;
+    }
+
+    #carousel-example-generic .carousel-inner .carousel-caption > h3 {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .carousel-caption a {
+        font-size: 16px;
+    }
+
+    .products-list {
+        font-size: 13px;
+    }
+
+        .products-list .product-info {
+            margin-left: 1px;
+        }
+}
+
+
+
+
+
+
+/* Desktop  */
+@media (max-width: 1500px) and (min-width: 1200px) {
+    #bemvindo {
+        font-weight: 400;
+        font-size: 2.0em;
+        color: #b3b3b3;
+        padding: 15px;
+    }
+
+
+    #imagemSite {
+        width: 600px;
+        height: 450px;
+    }
+
+    #carousel-example-generic .carousel-inner .carousel-caption > h3 {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .carousel-caption a {
+        font-size: 16px;
+    }
+
+    .products-list {
+        font-size: 13px;
+    }
+
+    .products-list .product-info {
+        margin-left: 1px;
+    }
+}
+
+
+
+
+@media (max-width: 1200px) and (min-width: 991px) {
+
+    #bemvindo {
+        font-weight: 400;
+        font-size: 2.0em;
+        color: #b3b3b3;
+        padding: 15px;
+    }
+
+
+    #imagemSite {
+        width: 570px;
+        height: 470px;
+    }
+
+    #carousel-example-generic .carousel-inner .carousel-caption > h3 {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .carousel-caption a {
+        font-size: 16px;
+    }
+
+    .products-list {
+        font-size: 13px;
+    }
+
+    .products-list .product-info {
+        margin-left: 1px;
+    }
+}
+
+
+
+
+/* Tablet em retrato a paisagem e desktop */
+@media (max-width: 991px) and (min-width: 767px) {
+        #bemvindo {
+            font-weight: 400;
+            font-size: 2.0em;
+            color: #b3b3b3;
+            padding: 15px;
+        }
+
+
+        #imagemSite {
+            width: 800px;
+            height: 400px;
+        }
+
+        #carousel-example-generic .carousel-inner .carousel-caption > h3 {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        .carousel-caption a {
+            font-size: 16px;
+        }
+
+        .products-list {
+            font-size: 12px;
+        }
+
+        .products-list .product-info {
+            margin-left: 1px;
+        }
+    }
+
+
+    /* Telefones em paisagem a tablet em retrato */
+@media (max-width: 767px) and (min-width: 500px) {
+    #bemvindo {
+        font-weight: 400;
+        font-size: 2.0em;
+        color: #b3b3b3;
+        padding: 15px;
+    }
+
+
+    #imagemSite {
+        width: 650px;
+        height: 350px;
+    }
+
+    #carousel-example-generic .carousel-inner .carousel-caption > h3 {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .carousel-caption a {
+        font-size: 16px;
+    }
+
+
+    .products-list {
+        font-size: 12px;
+    }
+
+        .products-list .product-info {
+            margin-left: 1px;
+        }
+}
+
+
+@media (max-width: 500px) and (min-width: 390px) {
+
+    #bemvindo {
+        font-weight: 400;
+        font-size: 1.6em;
+        color: #b3b3b3;
+        padding: 15px;
+    }
+
+    #imagemSite {
+        width: 450px;
+        height: 250px;
+    }
+
+    #carousel-example-generic .carousel-inner .carousel-caption > h3 {
+        padding: 3px;
+        font-size: 12px;
+    }
+
+    .carousel-caption a {
+        font-size: 12px;
+    }
+
+    .products-list {
+        font-size: 12px;
+    }
+
+        .products-list .product-info {
+            margin-left: 1px;
+        }
+}
+
+
+/* Telefones Pequenos e na vertical*/    
+@media (max-width: 390px) {
+
+        #bemvindo {
+            font-weight: 500;
+            font-size: 1.2em;
+            color: #b3b3b3;
+            padding: 15px;
+        }
+
+        #imagemSite {
+            width: 320px;
+            height: 200px;
+        }
+
+        #carousel-example-generic .carousel-inner .carousel-caption > h3 {
+            padding: 1px;
+            font-size: 11px;
+        }
+
+        .carousel-caption a {
+            font-size: 11px;
+        }
+
+        .products-list {
+            font-size: 12px;
+        }
+
+
+
+        .products-list .product-info{
+            margin-left: 1px;
+        }
+
+    }

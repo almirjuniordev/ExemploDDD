@@ -1,0 +1,242 @@
+﻿div#pessoa dados {
+    width: 83%;
+    /* margin-left: 15%; */
+    /* margin-top: -171px; */
+    /* margin-bottom: -24%; */
+    margin: 0%;
+}
+
+
+.imagem {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 1px;
+    width: 10%;
+}
+
+.subsecao {
+    margin-top: 3px;
+}
+
+
+.dados {
+   width: 78%;
+}
+    .dados ul {
+        width: 210px;
+        display: inline-grid;
+        font-size: large;
+    }
+    .dados address span {
+        font-size: large;
+    } 
+
+
+.inscricao{
+    width: 10%;
+    padding: 0;
+}
+    .inscricao h3{
+        width: 10%;        
+    }
+
+.header h3{
+    width: 20%;
+}
+
+.subtitle {
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+.advogado ul li {
+    display: inline-block;
+    width: 30%;
+    box-sizing: content-box;
+    float: left;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    clear: right;
+    font-size: 16px;
+}
+
+    .advogado ul li span {
+        color: white;
+        display: block;
+        padding: 5px 15px;
+        color: #444;
+        font-weight: bold;
+        text-transform: none;
+    }
+
+        .advogado ul li span:first-child {
+            letter-spacing: 1px;
+            border-bottom: 1px solid #f9f9f9;
+            border-bottom: 2px solid #999;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+.endereco ul li {
+    display: inline-block;
+    width: 30%;
+    box-sizing: content-box;
+    float: left;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    clear: right;
+    font-size: 16px;
+}
+
+@media(max-width: 1394px){
+    .imagem{
+        width: 15%;
+    }
+
+    .dados{
+        width: 85%;
+
+    }
+
+    .inscricao{
+        width: 25%;
+    }
+}
+
+@media (max-width: 991px) {
+    sidebar-mini skin-blue sidebar-collapse .dados {
+
+    }
+
+
+    .imagem {
+        width: 15%;
+    }
+
+    .dados {
+        width: 85%;
+    }
+
+    .inscricao {
+        width: 25%;
+    }
+    
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 660px) and (max-width: 767px) {
+    .imagem {
+        width: 15%;
+        margin-right: 74px;
+        margin-bottom: -23%;
+    }
+
+    .dados {
+        width: 84%;
+        margin-left: auto;
+    }
+
+        .dados ul {
+            width: 167px
+        }
+
+            .dados ul#contato {
+                width: 201px;
+            }
+
+    .inscricao {
+        width: 25%;
+    }
+}
+
+@media(min-width: 457px) and (max-width: 660px){
+    div.row-fluid {
+        margin-bottom: 1%;
+    }
+
+
+    .imagem {
+        margin-bottom: -45%;
+        width: 15%;
+        margin-right: 74px;
+        margin-bottom: -23%;
+    }
+
+
+
+    .dados {
+        width: 100%;
+        padding-left: 141px;
+
+    }
+
+        .dados div {
+            width: 120%;
+            margin-top: -17%;
+            margin-left: 43%;
+        }
+
+        .dados ul {
+            margin-bottom: -38px;
+            margin-left: -165px;
+            margin-top: 69px;
+            margin-right: -15px;
+        }
+
+            .dados ul#contato {
+                margin-left: auto;
+            }
+
+
+
+    .inscricao {
+        width: 40%;
+    }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 457px) {
+
+    div.row-fluid{
+        margin-bottom: 25%;
+
+    }
+
+    .dados {
+        width: 100%;
+        padding-left: 141px;
+    }
+    .dados div{
+        width: 120%;
+    }
+
+        .dados ul {
+            margin-bottom: -38px;
+            margin-left: -165px;
+            margin-top: 69px;
+            margin-right: -15px;
+        }
+
+        .dados ul#contato{
+            margin-left: auto;
+        }
+
+
+    .imagem {
+        margin-bottom: -45%
+    }
+
+    .inscricao{
+        width: 40%;
+
+    }
+}
+
+
+
+
+

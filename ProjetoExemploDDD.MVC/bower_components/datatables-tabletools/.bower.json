@@ -1,0 +1,13 @@
+{
+  "name": "datatables-tabletools",
+  "homepage": "https://github.com/DataTables/TableTools",
+  "_release": "RELEASE_2_1_5",
+  "_resolution": {
+    "type": "tag",
+    "tag": "RELEASE_2_1_5",
+    "commit": "9327f6f5dac2e14aefe0ddad8463d0621e610512"
+  },
+  "_source": "https://github.com/DataTables/TableTools.git",
+  "_target": "RELEASE_2_1_5",
+  "_originalSource": "datatables-tabletools"
+}

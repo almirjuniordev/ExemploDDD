@@ -1,0 +1,33 @@
+﻿@*@using OAB.Intranet.UI.Extensions*@
+@{
+    ViewBag.Title = "_SidebarMenu";
+}
+
+<aside class="main-sidebar">
+
+    <!-- sidebar -->
+    <section class="sidebar">
+
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+
+            <div class="pull-left image">
+
+                <img src="~/img/logo.jpg" class="img-circle" alt="Logo">
+            </div>
+
+            <div class="pull-left info">
+                @*@{Html.RenderPartial("~/Views/UsuariosNew/GetDepartamento.cshtml");}*@
+            </div>
+
+        </div>
+        <!-- /.Sidebar user panel -->
+        <!--Items de menu-->
+        @*@{  Html.RenderAction("Index", "Menu", new { menus = User.GetMenuUser() });}*@
+        <!--/.Items de menu-->
+
+    </section>
+    <!-- /.sidebar -->
+
+</aside>
+

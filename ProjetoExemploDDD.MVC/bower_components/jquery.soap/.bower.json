@@ -1,0 +1,24 @@
+{
+  "name": "jquery.soap",
+  "version": "1.6.9",
+  "keywords": [
+    "jquery",
+    "soap",
+    "ajax",
+    "wss"
+  ],
+  "main": "jquery.soap.js",
+  "dependencies": {
+    "jquery": ">=1.9"
+  },
+  "homepage": "https://github.com/doedje/jquery.soap",
+  "_release": "1.6.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.6.9",
+    "commit": "42e3fcbd85cc7811a89d951f5a6347676eacbf9e"
+  },
+  "_source": "https://github.com/doedje/jquery.soap.git",
+  "_target": "1.6.9",
+  "_originalSource": "jquery.soap"
+}
